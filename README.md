@@ -20,7 +20,7 @@ This repo is part of my journey to transition into a professional role in **Spat
 
 | # | Project Title | Status | Description | Tools & Technologies |
 |---|-------------------------------|--------|------------------------|------------------------|
-| 1 | Urban Heat Risk Zones and Public Cooling Infrastructure Mapping | 🔄 In Progress | Accessibility of cooling infrastructure | QGIS + Carto Plugin, OpenStreetMap, Carto Builder  |
+| 1 | Urban Heat Risk Zones and Public Cooling Infrastructure Mapping | 🔄 In Progress | Accessibility of cooling infrastructure | QGIS, OpenStreetMap, Streamlit |
 | 2 | Green Space Accessibility | 🔜 Planned | Assess walkability to urban green spaces | OSMnx, NetworkX, Folium |
 | 3 | Public Transport Mobility Patterns | 🔜 Planned | Explore city mobility using GTFS data | Mapbox, Deck.gl, Pandas |
 
