@@ -11,7 +11,7 @@ This repo is part of my journey to transition into a professional role in **Spat
 
 ## 🚧 Current Status
 
-✅ First project in progress: **Green Space Accessibility**  
+✅ First project in progress: **Urban Heat Risk Zones and Public Cooling Infrastructure Mapping**  
 🚀 More projects to follow soon — stay tuned and ⭐ this repo!
 
 ---
