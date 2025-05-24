@@ -1,63 +1,87 @@
-# Urban Heat Risk Zones & Cooling Infrastructure Accessibility in Pune
+# Urban Heat Risk and Cooling Access Dashboard: Pune City
 
-## 🧭 Project Objective
-This project identifies urban heat risk zones in Pune based on land surface temperature (LST), vegetation cover, and population vulnerability. It evaluates public access to cooling infrastructure like parks and water bodies and presents the findings through an interactive Carto dashboard.
+## 🧭 Project Goal
+To identify urban heat zones and evaluate the accessibility of cooling infrastructure in Pune city.
 
-## 📌 Key Questions
-- Where are the heat-vulnerable zones in Pune?
-- Which areas lack access to green or cooling infrastructure?
-- How can this be used for climate-resilient urban planning?
+## 🛠️ Tech Stack
+- QGIS (spatial preprocessing and classification)
+- Streamlit (interactive dashboard)
+- Python (geopandas, pandas, folium, matplotlib, shapely)
 
-## 🔧 Tools & Stack
-- QGIS (processing, analysis)
-- Carto Builder (interactive storytelling dashboard)
-- OpenStreetMap (cooling resources)
-- MODIS LST, Sentinel NDVI (remote sensing)
-- Pune ward boundaries + census data
+## 📂 Data Sources
+- MODIS LST (via NASA)
+- NDVI (Sentinel-2 via EO Browser)
+- Pune Ward Boundaries (PMC)
+- OpenStreetMap (parks, water bodies)
+- Population Density (Census of India or WorldPop)
 
-## 📁 Folder Structure
+## 🗺️ Dashboard Features
+- Heat Risk Mapping
+- NDVI (green cover) layers
+- Population overlay with filter options
+- Cooling infrastructure buffer zones
+- Accessibility statistics
+
+## 📈 Methodology
+- Step-by-step QGIS preprocessing
+- NDVI and LST thresholding
+- Zonal statistics per ward
+- Accessibility buffer analysis
+
+## 🚀 How to Run
+```bash
+pip install -r requirements.txt
+streamlit run app/streamlit_app.py
 ```
-urban-heat-risk-accessibility-qgis-carto-pune/
-│
-├── README.md                  # Project overview and steps
-├── data/
-│   ├── raw/                   # Original datasets (MODIS, OSM, Census)
-│   ├── processed/             # Cleaned, clipped, georeferenced data
-│   └── metadata/              # Source details, license info
-│
-├── qgis_project/
-│   ├── project.qgz            # Main QGIS project file
-│   ├── style/                 # QGIS layer styles (e.g., heat zones, buffers)
-│   └── processing_models/     # ModelBuilder or scripts used
-│
-├── carto_output/
-│   ├── .carto_files/          # Layers published to Carto
-│   ├── screenshots/           # Map visuals for README/docs
-│   └── dashboard_link.txt     # Published dashboard URL
-│
-├── scripts/
-│   └── preprocess_data.qmd    # Optional Python/Jupyter QGIS processing
-│
-├── reports/
-│   └── policy_brief.pdf       # Optional insights PDF
-│
-└── LICENSE
-```
+
+## 📌 Results and Screenshots
+(Embed exported maps + dashboard GIFs)
 
 ## 🗺️ Dashboard Link
-[🔗 Live Carto Dashboard](#under development)
-
-## 🚀 Workflow
-1. Download and prepare data in QGIS
-2. Classify LST and NDVI to identify heat zones and green deficits
-3. Join population data and highlight high-risk areas
-4. Map public cooling infrastructure (parks, lakes)
-5. Analyze accessibility with 500m buffers
-6. Style layers and publish via Carto QGIS plugin
-7. Build interactive dashboard in Carto Builder
+[🔗 Live Streamlit Dashboard](#under development)
 
 ## 📷 Preview
 _Screenshots of Carto Builder dashboard_(#under development)
+
+## 🧠 Insights and Policy Suggestions
+- Priority wards for heat adaptation
+- Gaps in cooling infrastructure
+
+## 📚 References
+(List of sources and tools)
+
+## 📁 Folder Structure
+```
+urban-heat-risk-pune/
+│
+├── README.md                      ← Overview, methodology, results, usage
+├── requirements.txt               ← Python + Streamlit dependencies
+├── data/
+│   ├── raw/
+│   │   ├── LST_MODIS_Pune.tif
+│   │   ├── Pune_Ward_Boundaries.shp
+│   │   ├── OSM_Parks_Water.geojson
+│   │   └── Population_Density.csv
+│   ├── processed/
+│   │   ├── heat_zones.gpkg
+│   │   └── green_index_ndvi.gpkg
+│   └── external/                  ← Downloaded sources and citations
+│
+├── notebooks/
+│   └── preprocessing_qgis_steps.md
+│
+├── app/
+│   ├── streamlit_app.py           ← Dashboard UI code
+│   └── heatmap_utils.py           ← Helper functions for spatial data
+│
+├── outputs/
+│   ├── screenshots/
+│   └── map_exports/
+│
+└── docs/
+    └── methodology.md             ← Heat risk classification, buffer logic
+
+```
 
 ## 📜 License
 MIT License
