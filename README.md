@@ -43,9 +43,7 @@ This repo is part of my journey to transition into a professional role in **Spat
 - `EarthPy`, `SentinelHub`, `geemap`
 
 ### 🌐 App Building
-- `Streamlit` for interactive web dashboards
-- Streamlit Cloud for deployment
-
+- `Streamlit`, `Panel`, `Dash`, `Carto`, `Voila` for interactive web dashboards
 ---
 
 ## 🧠 Who Is This For?
