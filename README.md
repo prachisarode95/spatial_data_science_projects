@@ -20,10 +20,9 @@ This repo is part of my journey to transition into a professional role in **Spat
 
 | # | Project Title | Status | Description | Tools & Technologies |
 |---|-------------------------------|--------|------------------------|------------------------|
-| 1 | Green Space Accessibility | 🔄 In Progress | Assess walkability to urban green spaces | OSMnx, NetworkX, Folium |
-| 2 | NDVI Time Series for Agricultural Monitoring | 🔜 Planned | Monitor crop health using NDVI | GEE, Python, Kepler.gl |
-| 3 | Urban Heat Island Mapping | 🔜 Planned | Visualize land surface temperatures | Landsat, GEE, Leafmap |
-| 4 | Public Transport Mobility Patterns | 🔜 Planned | Explore city mobility using GTFS data | Mapbox, Deck.gl, Pandas |
+| 1 | Urban Heat Risk Zones and Public Cooling Infrastructure Mapping | 🔄 In Progress | Accessibility of cooling infrastructure | QGIS + Carto Plugin, OpenStreetMap, Carto Builder  |
+| 2 | Green Space Accessibility | 🔜 Planned | Assess walkability to urban green spaces | OSMnx, NetworkX, Folium |
+| 3 | Public Transport Mobility Patterns | 🔜 Planned | Explore city mobility using GTFS data | Mapbox, Deck.gl, Pandas |
 
 ---
 
