@@ -1,17 +1,17 @@
-# 🗺️ Spatial Data Visualization Projects with Python
+# 🗺️ Spatial Data Science Projects
 
-Welcome to my curated collection of **Spatial Data Visualization Projects** — a living repository where I combine geospatial analysis, data storytelling, and modern Python visualization tools to tackle real-world spatial problems.
+Welcome to my curated collection of **Spatial Data Science Projects** — a living repository where I combine geospatial analysis, data storytelling, and modern Python visualization tools to tackle real-world spatial problems.
 
-This repo is part of my journey to transition into a professional role in **Spatial Data Science**, while applying my background in GIS, remote sensing, and geospatial data automation.
+This repo is part of my journey to transition into a professional role in **Spatial Data Science**, while applying my background in GIS, Remote Sensing, and Geospatial Data Integration & Automation.
 
-> 🔍 **Focus:** Urban analytics, environmental monitoring, accessibility mapping, land use change, and air quality visualization  
+> 🔍 **Focus:** Urban analytics, Environmental Monitoring, Accessibility Mapping, Land Use Change, Air Quality Visualization & more.
 > 💻 **Stack:** Python · Streamlit · GeoPandas · Kepler.gl · GEE · Plotly · Leafmap · OSMnx and more.
 
 ---
 
 ## 🚧 Current Status
 
-✅ First project in progress: **Urban Heat Risk Zones and Public Cooling Infrastructure Mapping**  
+✅ First project in progress: **Climate-Resilient Urban Planning – Heat Island Detection & Cooling Infrastructure Mapping**  
 🚀 More projects to follow soon — stay tuned and ⭐ this repo!
 
 ---
@@ -20,8 +20,8 @@ This repo is part of my journey to transition into a professional role in **Spat
 
 | # | Project Title | Status | Description | Tools & Technologies |
 |---|-------------------------------|--------|------------------------|------------------------|
-| 1 | Urban Heat Risk Zones and Public Cooling Infrastructure Mapping | 🔄 In Progress | Accessibility of cooling infrastructure | QGIS, OpenStreetMap, Streamlit |
-| 2 | Green Space Accessibility | 🔜 Planned | Assess walkability to urban green spaces | OSMnx, NetworkX, Folium |
+| 1 | Climate-Resilient Urban Planning – Heat Island Detection & Cooling Infrastructure Mapping | 🔄 In Progress | Accessibility of cooling infrastructure | Google Colab, SAMGeo, Leafmap/MapLibre, Streamlit |
+| 2 | Urban Green Space Segmentation and Accessibility | 🔜 Planned | Assess walkability to urban green spaces | OSMnx, NetworkX, Folium |
 | 3 | Public Transport Mobility Patterns | 🔜 Planned | Explore city mobility using GTFS data | Mapbox, Deck.gl, Pandas |
 
 ---
@@ -39,10 +39,10 @@ This repo is part of my journey to transition into a professional role in **Spat
 
 ### 🌍 Earth Observation
 - `Google Earth Engine (GEE)`
-- `EarthPy`, `SentinelHub`, `geemap`
+- `EarthPy`, `SentinelHub`, `geemap`, `SAMGeo`, `Leafmap`
 
 ### 🌐 App Building
-- `Streamlit`, `Panel`, `Dash`, `Carto`, `Voila` for interactive web dashboards
+- `Streamlit`, `Panel`, `Dash`, `Voila` for interactive web dashboards
 ---
 
 ## 🧠 Who Is This For?
