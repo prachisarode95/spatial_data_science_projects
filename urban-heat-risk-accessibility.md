@@ -1,9 +1,37 @@
 # Climate-Resilient Urban Planning – Heat Island Detection & Cooling Infrastructure Mapping
 
 ## 🧭 Project Goal
-Use thermal remote sensing (e.g., Landsat 8 TIRS) and SAMGeo to detect urban heat islands (UHI) and map public cooling infrastructures (parks, fountains, shaded areas).
+Detect Urban Heat Islands (UHIs) using thermal imagery (e.g., Landsat 8), segment them using SAMGeo, and map public cooling infrastructure using Streamlit + Leafmap for interactive exploration.
+
+---
 
 ## 🛠️ Tech Stack
+| Task                            | Tool              |
+| ------------------------------- | ----------------- |
+| Data download + preprocessing   | Google Colab      |
+| Object segmentation (UHI zones) | SAMGeo            |
+| Mapping + interactivity         | Leafmap, MapLibre |
+| Dashboard UI                    | Streamlit         |
+
+---
+
+## 📂 Folder Structure
+```
+urban_heat_dashboard/
+├── data/
+│   ├── aoi.geojson
+│   └── cooling_points.geojson  # Optional
+├── notebooks/
+│   └── colab_uhi_segmentation.ipynb
+├── app/
+│   └── streamlit_app.py
+├── assets/
+│   └── uhi_mask.tif
+│   └── lst_image.tif
+├── requirements.txt
+├── README.md
+```
+---
 
 ## 📂 Data Sources
 
