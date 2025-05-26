@@ -1,7 +1,15 @@
-# Climate-Resilient Urban Planning – Heat Island Detection & Cooling Infrastructure Mapping
+# Urban Heat Island Object Detection using GeoSAM on Landsat-derived LST in Pune
 
 ## 🧭 Project Goal
-Detect Urban Heat Islands (UHIs) using thermal imagery (e.g., Landsat 8), segment them using SAMGeo, and map public cooling infrastructure using Streamlit + Leafmap for interactive exploration.
+Use Google Colab + Leafmap + Samgeo (GeoSAM) to:
+
+- Extract Land Surface Temperature (LST) using Landsat 8 over Pune
+
+- Run object detection using the Segment Anything Model (GeoSAM)
+
+- Visualize results on an interactive leafmap
+
+- Deploy the whole result in a Streamlit app
 
 ---
 
@@ -10,26 +18,29 @@ Detect Urban Heat Islands (UHIs) using thermal imagery (e.g., Landsat 8), segmen
 | ------------------------------- | ----------------- |
 | Data download + preprocessing   | Google Colab      |
 | Object segmentation (UHI zones) | SAMGeo            |
-| Mapping + interactivity         | Leafmap, MapLibre |
+| Mapping + interactivity         | Leafmap           |
 | Dashboard UI                    | Streamlit         |
 
 ---
 
 ## 📂 Folder Structure
 ```
-urban_heat_dashboard/
+urban-heat-geosam-pune/
+│
 ├── data/
-│   ├── aoi.geojson
-│   └── cooling_points.geojson  # Optional
+│   └── aoi.geojson
 ├── notebooks/
-│   └── colab_uhi_segmentation.ipynb
+│   └── urban_heat_detection.ipynb  ← Google Colab-compatible
 ├── app/
 │   └── streamlit_app.py
-├── assets/
-│   └── uhi_mask.tif
+├── outputs/
 │   └── lst_image.tif
+│   └── geosam_masked.geojson
 ├── requirements.txt
 ├── README.md
+├── .streamlit/
+│   └── config.toml
+├── logo.png
 ```
 ---
 
