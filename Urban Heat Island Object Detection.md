@@ -39,21 +39,21 @@ Urban Heat Islands (UHIs) increase the temperature in dense urban areas due to c
 urban-heat-geosam-pune/
 │
 ├── data/
-│   └── aoi.geojson
+│   ├── aoi_boundary.geojson
+│   ├── uhi_zones.geojson              # Extracted UHI polygons
+│   └── lst_image.tif
 ├── notebooks/
 │   └── uhi_segmentation.ipynb  ← Google Colab-compatible
 ├── app/
-│   └── app.py # Streamlit web app
+│   └── streamlit_app.py               # Streamlit web app
 ├── outputs/
-│   └── lst_normalized_pune.tif        # Preprocessed LST for Pune
-│   └── uhi_zones.geojson              # Extracted UHI polygons
-    └── cooling_infrastructure.geojson # OSM-based green/cooling zones
-    └── sam_vit_h.pth                  # SAM checkpoint
+│   ├── cooling_infrastructure.geojson # OSM-based green/cooling zones
+│   └── sam_vit_h.pth                  # SAM checkpoint
 ├── requirements.txt                   # Python dependencies
 ├── README.md                          # Project documentation
 ├── .streamlit/
-│   └── config.toml
-├── logo.png
+│   ├── config.toml
+    └── logo.png
 ```
 ---
 
