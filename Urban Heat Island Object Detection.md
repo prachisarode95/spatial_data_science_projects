@@ -1,8 +1,9 @@
 # 🌆 Climate-Resilient Urban Planning: Urban Heat Island Detection & Cooling Infrastructure Mapping
 
+## Overview
 An interactive GeoAI application built with Google Earth Engine, SAMGeo, Streamlit, and OSM data for detecting Urban Heat Islands (UHIs) and overlaying cooling infrastructure like parks, water bodies, and green spaces.
 
-## 🔍 Project Overview
+## 🔍 Project Goals
 Urban Heat Islands (UHIs) increase the temperature in dense urban areas due to concrete surfaces, reduced vegetation, and human activities. This project aims to support climate-resilient urban planning by:
 
 1. Detecting UHIs from Land Surface Temperature (LST) satellite data
