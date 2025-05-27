@@ -74,6 +74,18 @@ urban-heat-geosam-pune/
 pip install -r requirements.txt
 streamlit run app/streamlit_app.py
 ```
+✅ Final Output
+🖼️ An interactive dashboard with:
+
+🔴 UHI Zones
+
+🌳 Cooling Zones
+
+📤 Upload your own LST maps
+
+🧠 GeoSAM segmentation
+
+📥 Download resulting GeoJSONs
 
 ## 📌 Results and  📷 Preview
 (Embed exported maps + dashboard GIFs)
@@ -92,8 +104,6 @@ streamlit run app/streamlit_app.py
 
 ## 📚 References
 (List of sources and tools)
-
-## 📁 Folder Structure
 
 ## 📜 License
 MIT License
