@@ -67,6 +67,9 @@ streamlit run app/streamlit_app.py
 ## 🧠 Insights and Policy Suggestions
 - Priority wards for heat adaptation
 - Gaps in cooling infrastructure
+- Proximity of UHI zones to cooling zones
+- Underserved urban areas with green infrastructure
+- Candidates for green infrastructure expansion
 
 ## 📚 References
 (List of sources and tools)
