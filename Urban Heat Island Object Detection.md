@@ -48,6 +48,25 @@ urban-heat-geosam-pune/
 
 ## 🗺️ Dashboard Features
 
+✅ Key Tools:
+ - `streamlit` – Web app UI
+
+- `leafmap` or `maplibre` – Map interactivity
+
+- `samgeo` – GeoSAM segmentation
+
+- `geopandas`, `rasterio`, `folium` – Data I/O and processing
+
+🧱 Dashboard Architecture:
+
+| Section                          | Description                                      |
+| -------------------------------- | ------------------------------------------------ |
+| 🗺️ Map Viewer                   | Toggle UHI and cooling layers                    |
+| 🗂️ LST Upload + Auto-Processing | Upload GeoTIFF → Normalize → Segment with GeoSAM |
+| 📥 Download Outputs              | Download GeoJSON of UHI polygons                 |
+
+---
+
 ## 📈 Methodology
 
 ## 🚀 How to Run
