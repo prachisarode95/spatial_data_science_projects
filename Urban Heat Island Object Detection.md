@@ -1,81 +1,102 @@
-# 🌆 Climate-Resilient Urban Planning: Urban Heat Island Detection & Cooling Infrastructure Mapping
+# 🌆 Climate-Resilient Urban Planning – Heat Island Detection and Cooling Infrastructure Mapping
 
-## Overview
-An interactive GeoAI application built with Google Earth Engine, SAMGeo, Streamlit, and OSM data for detecting Urban Heat Islands (UHIs) and overlaying cooling infrastructure like parks, water bodies, and green spaces.
+A complete end-to-end GeoAI project that identifies Urban Heat Island (UHI) hotspots and maps cooling infrastructure using open-source geospatial tools. The study focuses on **Pune, India** during the **pre-monsoon season (March–May 2024)**, leveraging **Landsat 9 LST data**, **OpenStreetMap features**, and a **Streamlit dashboard** to recommend climate-adaptive urban planning strategies.
 
-## 🔍 Project Goals
-Urban Heat Islands (UHIs) increase the temperature in dense urban areas due to concrete surfaces, reduced vegetation, and human activities. This project aims to support climate-resilient urban planning by:
-
-1. Detecting UHIs from Land Surface Temperature (LST) satellite data
-
-2. Identifying nearby cooling infrastructures (parks, lakes, forests) using OpenStreetMap
-
-3. Visualizing spatial patterns through an interactive web app
-
-4. Allowing users to upload their own LST GeoTIFFs and run GeoSAM segmentation
 ---
-## 🛠️ Tech Stack
 
-| Component        | Technology                                                              |
-| ---------------- | ----------------------------------------------------------------------- |
-| **LST Data**     | Google Earth Engine (MODIS or Landsat)                                  |
-| **Segmentation** | [SAMGeo](https://github.com/opengeos/samgeo) using Meta AI’s SAM model  |
-| **Mapping**      | [leafmap](https://github.com/opengeos/leafmap), \[folium], \[geopandas] |
-| **Web App**      | [Streamlit](https://streamlit.io/)                                      |
-| **OSM Data**     | [osmnx](https://github.com/gboeing/osmnx)                               |
+## 🚀 Project Goals
 
+- Detect urban heat stress zones using satellite-derived Land Surface Temperature (LST).
+- Map existing cooling infrastructure (green spaces and water bodies).
+- Identify underserved areas lacking thermal comfort.
+- Visualize results in an interactive Streamlit dashboard for urban planning and policy interventions.
+
+---
+
+## 🛰️ Tech Stack
+
+| Type | Tools Used |
+|------|------------|
+| Remote Sensing | Landsat 9 (LST Band 10) |
+| Spatial Analysis | `geemap`, `rasterio`, `numpy`, `folium`, `shapely` |
+| OpenStreetMap | `osmnx`, `openstreetmap` |
+| Dashboard | `Streamlit`, `ngrok` |
+| Development | Google Colab, Python, GeoJSON, Jupyter Notebooks |
+
+---
+
+## 📁 Project Structure
+
+```bash
+urban-heat-dashboard/
+│
+├── Phase1_UHI_LST_Pune_MarMay2024.ipynb          # Retrieve and visualize LST
+├── Phase2_UHI_CoolingInfra_Pune_MarMay2024.ipynb # Extract cooling infra (OSM)
+├── Phase3_UHI_InfraGap_Analysis_Pune.ipynb       # UHI and buffer gap analysis
+├── UHI_Dashboard_Streamlit_ngrok_Colab.ipynb     # Streamlit deployment setup
+│
+├── uhi_dashboard.py                               # Streamlit dashboard code
+├── assets/
+│   ├── pune_boundary.geojson
+│   ├── pune_lst_stats.geojson
+│   ├── pune_cooling_buffer_200m.geojson
+│   └── uhi_hotspots.geojson
+│
+└── README.md
 ---
 ## 🚀 Methodology
-✅ Extract Urban Heat Islands using normalized LST
-✅ Use GeoSAM to segment hot regions
-✅ Overlay cooling zones (parks, gardens, water bodies, etc.) from OpenStreetMap
-✅ Upload your own GeoTIFF LST image and run segmentation
-✅ Download generated UHI zones as GeoJSON
-✅ Fully interactive Streamlit map viewer using leafmap
 
+## ✅ Key Outputs
+- 🔥 Urban Heat Island Map using Landsat-derived LST
+
+- 🌳 Buffered Cooling Zones (200m radius from parks/water bodies)
+
+- ⚠️ Hotspot Areas Without Cooling Infrastructure
+
+- 📊 Interactive Dashboard with layers, stats, and recommendations
 ---
-## 📂 Folder Structure
+
+## 📺 Streamlit Dashboard
+🌐 Hosted via ngrok (for Colab-based preview)
+
+To run locally:
 ```
-urban-heat-geosam-pune/
-│
-├── data/
-│   ├── aoi_boundary.geojson
-│   ├── uhi_zones.geojson              # Extracted UHI polygons
-│   └── lst_image.tif
-├── notebooks/
-│   └── uhi_segmentation.ipynb  ← Google Colab-compatible
-├── app/
-│   └── streamlit_app.py               # Streamlit web app
-├── outputs/
-│   ├── cooling_infrastructure.geojson # OSM-based green/cooling zones
-│   └── sam_vit_h.pth                  # SAM checkpoint
-├── requirements.txt                   # Python dependencies
-├── README.md                          # Project documentation
-├── .streamlit/
-│   ├── config.toml
-    └── logo.png
+bash
+streamlit run uhi_dashboard.py
 ```
+To run in Colab with tunnel:
+
+1. Upload uhi_dashboard.py and asset files.
+
+2. Use the notebook UHI_Dashboard_Streamlit_ngrok_Colab.ipynb.
+
+## 📷 Preview
+<!-- Replace with screenshot -->
+
+📝 Methodology
+LST Retrieval: Filter Landsat 9 imagery using geemap, extract Band 10 (thermal), and compute mean LST.
+
+Cooling Infra Extraction: Use osmnx and OSM tags to extract parks, gardens, and water bodies.
+
+Gap Analysis: Identify UHI hotspots > mean + 1 std, and buffer cooling infra by 200m to detect gaps.
+
+Visualization: Streamlit dashboard with togglable map layers and intervention guidance.
+
+🔍 Future Enhancements
+Incorporate demographic layers (e.g., elderly population density)
+
+Predict UHI trends using ML-based time series models
+
+Recommend greening potential sites using parcel-level data
+
+✨ Acknowledgements
+USGS EarthExplorer for Landsat data
+
+OpenStreetMap for cooling infrastructure data
+
+Qiusheng Wu for geemap and leafmap libraries
 ---
 
-## 🗺️ Dashboard Features
-✅ Key Tools:
- - `streamlit` – Web app UI
-
-- `leafmap` or `maplibre` – Map interactivity
-
-- `samgeo` – GeoSAM segmentation
-
-- `geopandas`, `rasterio`, `folium` – Data I/O and processing
-
-## 🧱 Dashboard Architecture:
-
-| Section                          | Description                                      |
-| -------------------------------- | ------------------------------------------------ |
-| 🗺️ Map Viewer                   | Toggle UHI and cooling layers                    |
-| 🗂️ LST Upload + Auto-Processing | Upload GeoTIFF → Normalize → Segment with GeoSAM |
-| 📥 Download Outputs              | Download GeoJSON of UHI polygons                 |
-
----
 ## 📦 Setup Instructions
 ```
 1. Clone the Repository
@@ -157,6 +178,20 @@ View and download the result in the map interface
 - Satellite data from NASA `MODIS` and `Landsat`
 
 - `OpenStreetMap` contributors
-
+---
+💬 Author
+👩‍💻 Prachi – GIS & Remote Sensing Analyst
+🔗 LinkedIn • Medium Blog (coming soon) • GitHub Portfolio
+---
 ## 📜 License
 This project is licensed under the MIT License. See LICENSE for more info.
+
+
+---
+
+### ✅ Next Steps
+
+- Save the above as `README.md` in your project repo.
+- Add a thumbnail image named `dashboard_preview.png` to your `assets/` folder.
+- Push the repo to GitHub and you're ready to share!
+
