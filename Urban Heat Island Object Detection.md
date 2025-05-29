@@ -82,19 +82,33 @@ Gap Analysis: Identify UHI hotspots > mean + 1 std, and buffer cooling infra by 
 
 Visualization: Streamlit dashboard with togglable map layers and intervention guidance.
 
-🔍 Future Enhancements
-Incorporate demographic layers (e.g., elderly population density)
+## 🔍 Future Enhancements
+- Incorporate demographic layers (e.g., elderly population density)
 
-Predict UHI trends using ML-based time series models
+- Predict UHI trends using ML-based time series models
 
-Recommend greening potential sites using parcel-level data
+- Recommend greening potential sites using parcel-level data
+- 🔄 Add support for batch processing multiple cities
 
-✨ Acknowledgements
-USGS EarthExplorer for Landsat data
+- 📊 Include UHI severity scoring and ranking
 
-OpenStreetMap for cooling infrastructure data
+- 🧭 Add spatial analysis: distance from UHI to nearest cooling zones
 
-Qiusheng Wu for geemap and leafmap libraries
+- 🛰️ Integrate real-time MODIS data via GEE API
+
+## 🧠 Insights and Policy Suggestions
+- Priority wards for heat adaptation
+- Gaps in cooling infrastructure
+- Proximity of UHI zones to cooling zones
+- Underserved urban areas with green infrastructure
+- Candidates for green infrastructure expansion
+
+## ✨ Acknowledgements
+[USGS EarthExplorer](https://earthexplorer.usgs.gov/) for Landsat data
+
+[OpenStreetMap](https://www.openstreetmap.org/#map=4/21.84/82.79) for cooling infrastructure data
+
+[Qiusheng Wu](https://github.com/giswqs) for geemap and leafmap libraries
 ---
 
 ## 📦 Setup Instructions
@@ -139,54 +153,17 @@ streamlit run app.py
 
 🌳 Cooling Zones
 
-📤 Upload your own LST maps
-
-🧠 GeoSAM segmentation
+📤 Upload your LST maps
 
 📥 Download resulting GeoJSONs
 
 ---
-## 🧠 Insights and Policy Suggestions
-- Priority wards for heat adaptation
-- Gaps in cooling infrastructure
-- Proximity of UHI zones to cooling zones
-- Underserved urban areas with green infrastructure
-- Candidates for green infrastructure expansion
-
-## 📥 Upload Your LST Data
-Upload a normalized LST GeoTIFF (values between 0–1)
-
-Click the Run GeoSAM button to generate UHI polygons
-
-View and download the result in the map interface
-
-## 🔍 Future Enhancements
-🔄 Add support for batch processing multiple cities
-
-📊 Include UHI severity scoring and ranking
-
-🧭 Add spatial analysis: distance from UHI to nearest cooling zones
-
-🛰️ Integrate real-time MODIS data via GEE API
-
----
-## 🤝 Credits
-- `SAMGeo` by [Qiusheng Wu](https://github.com/opengeos/segment-geospatial)
-
-- `leafmap`, `geemap`, and `osmnx` open-source communities
-
-- Satellite data from NASA `MODIS` and `Landsat`
-
-- `OpenStreetMap` contributors
----
 💬 Author
 👩‍💻 Prachi – GIS & Remote Sensing Analyst
-🔗 LinkedIn • Medium Blog (coming soon) • GitHub Portfolio
+🔗 [LinkedIn](https://www.linkedin.com/in/prachisarode95) • Medium Blog (coming soon)
 ---
 ## 📜 License
 This project is licensed under the MIT License. See LICENSE for more info.
-
-
 ---
 
 ### ✅ Next Steps
