@@ -18,10 +18,10 @@ A complete end-to-end GeoAI project that identifies Urban Heat Island (UHI) hots
 | Type | Tools Used |
 |------|------------|
 | Remote Sensing | Landsat 9 (LST Band 10) |
-| Spatial Analysis | `geemap`, `rasterio`, `numpy`, `folium`, `shapely` |
+| Spatial Analysis | `geemap`, `rasterio`, `numpy`, `folium`, `shapely` `GeoJSON` |
 | OpenStreetMap | `osmnx`, `openstreetmap` |
 | Dashboard | `Streamlit`, `ngrok` |
-| Development | Google Colab, Python, GeoJSON, Jupyter Notebooks |
+| Development | Google Colab, Python  |
 
 ---
 
