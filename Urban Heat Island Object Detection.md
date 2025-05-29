@@ -43,8 +43,8 @@ urban-heat-dashboard/
 │   └── uhi_hotspots.geojson
 │
 └── README.md
+```
 ---
-## 🚀 Methodology
 
 ## ✅ Key Outputs
 - 🔥 Urban Heat Island Map using Landsat-derived LST
@@ -73,7 +73,7 @@ To run in Colab with tunnel:
 ## 📷 Preview
 <!-- Replace with screenshot -->
 
-📝 Methodology
+## 📝 Methodology
 LST Retrieval: Filter Landsat 9 imagery using geemap, extract Band 10 (thermal), and compute mean LST.
 
 Cooling Infra Extraction: Use osmnx and OSM tags to extract parks, gardens, and water bodies.
@@ -145,17 +145,6 @@ streamlit run app.py
 
 ## 🌐 Live App
 [🔗 Try it here:](https://your-streamlit-app-url)
-
-## ✅ Final Output
-🖼️ An interactive dashboard with:
-
-🔴 UHI Zones
-
-🌳 Cooling Zones
-
-📤 Upload your LST maps
-
-📥 Download resulting GeoJSONs
 
 ---
 💬 Author
