@@ -1,0 +1,11 @@
+streamlit
+samgeo
+leafmap
+geopandas
+rasterio
+folium
+torch
+torchvision
+numpy
+pandas
+osmnx
