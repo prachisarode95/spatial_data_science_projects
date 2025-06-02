@@ -155,9 +155,3 @@ streamlit run app.py
 This project is licensed under the MIT License. See LICENSE for more info.
 ---
 
-### ✅ Next Steps
-
-- Save the above as `README.md` in your project repo.
-- Add a thumbnail image named `dashboard_preview.png` to your `assets/` folder.
-- Push the repo to GitHub and you're ready to share!
-
