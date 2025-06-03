@@ -1,0 +1,9 @@
+### Recommendations Summary:
+
+1. **Hotspots Identified**: Zones with Land Surface Temperatures above 47.50°C.
+2. **Vegetation Deficit**: These zones also show NDVI values below 0.25, indicating sparse or no vegetation.
+3. **Lack of Cooling Features**: Critical zones lie **outside** the influence of green and blue infrastructure.
+4. **Interventions Suggested**:
+   - Create **urban parks, rooftop gardens, green corridors**.
+   - Add **water features** like urban ponds or fountains.
+   - Focus especially on **underserved wards** where all three conditions intersect.
