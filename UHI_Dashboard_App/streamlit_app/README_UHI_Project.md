@@ -1,10 +1,9 @@
 
 # 🌆 Climate-Resilient Urban Planning – Pune (2025)
 
-This project identifies Urban Heat Island (UHI) zones in Pune using remote sensing data and builds an interactive, bilingual Streamlit dashboard for exploring cooling infrastructure, vegetation stress, and climate adaptation recommendations.
-
-> **Author**: Prachi  
-> **Tools Used**: Google Earth Engine, GeoPandas, Rasterio, Leafmap, Streamlit, matplotlib, numpy
+This project identifies Urban Heat Island (UHI) zones in Pune City using remote sensing data and builds an interactive, bilingual Streamlit dashboard for exploring cooling infrastructure, vegetation stress, and climate adaptation recommendations.
+  
+> **Tools Used**: Google Earth Engine, GeoPandas, Rasterio, Leafmap, Streamlit, matplotlib, numpy, etc.
 
 ---
 
@@ -45,7 +44,7 @@ Urban areas like Pune experience elevated surface temperatures due to dense buil
 
 ### 🔹 Phase 4: Streamlit Dashboard
 
-- Built interactive map with:
+- Built an interactive map with:
   - UHI zones
   - Cooling centers
   - Green spaces
@@ -79,14 +78,6 @@ Urban areas like Pune experience elevated surface temperatures due to dense buil
 
 ---
 
-## 📸 Screenshots
-
-![Map View](figures/uhi_vs_cooling_access.png)
-
-> Heat risk distribution and cooling center access
-
----
-
 ## 🗂️ Data Sources
 
 - [USGS Earth Explorer (Landsat 9 LST)](https://earthexplorer.usgs.gov/)
@@ -96,7 +87,7 @@ Urban areas like Pune experience elevated surface temperatures due to dense buil
 
 ## ⚙️ Installation
 
-Clone this repo and install required libraries:
+Clone this repo and install the required libraries:
 
 ```bash
 git clone https://github.com/yourusername/urban-heat-dashboard
@@ -112,13 +103,10 @@ streamlit run app.py
 
 ---
 
-## 🌐 Deployment
+## 🌐 Streamlit App Link
 
-The dashboard is deployable on:
-- [Streamlit Cloud](https://streamlit.io/cloud)
-- [Hugging Face Spaces](https://huggingface.co/spaces)
-- [Render](https://render.com)
-
+The dashboard is deployed on:
+- [Urban Heat Island Dashboard](https://huggingface.co/spaces/prachisarode/urban-heat-dashboard-pune)
 ---
 
 ## 🙌 Acknowledgements
@@ -132,11 +120,3 @@ The dashboard is deployable on:
 ## 📄 License
 
 This project is open-source under the MIT License.
-
----
-
-### 💡 Future Work
-
-- Integrate user-defined AOI tools
-- Add real-time mobile heat data if available
-- Machine learning-based LST estimation
