@@ -116,6 +116,14 @@ The dashboard is deployed on:
 - Sentinel Hub and USGS data repositories
 
 ---
+## 🧠 Author
+
+**Prachi**  
+GIS & Remote Sensing Analyst 
+[LinkedIn](https://www.linkedin.com/in/prachisarode95) 
+[Medium](https://medium.com/@prachisarode)
+
+---
 
 ## 📄 License
 
