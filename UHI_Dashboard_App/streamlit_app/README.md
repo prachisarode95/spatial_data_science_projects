@@ -1,18 +1,3 @@
----
-license: mit
-title: Climate-Resilient Urban Planning
-emoji: 🌆
-colorFrom: blue
-colorTo: green
-sdk: streamlit
-sdk_version: 1.45.1
-thumbnail: https://cdn-uploads.huggingface.co/production/uploads/6835c53f0e3ff0534c0b1c49/Goxdc2uGr_nbBDlmSFh6U.png
-app_file: app.py
-pinned: false
-description: This app helps detect urban heat islands and map cooling infrastructures using Remote Sensing and
-  GeoAI.
----
-
 # 🌆 Climate-Resilient Urban Planning – Urban Heat Island Detection & Cooling Infrastructure Mapping
 
 A complete end-to-end GeoAI project that identifies Urban Heat Island (UHI) hotspots and maps cooling infrastructure in **Pune, India**, using **Python with Geospatial Technology**. The goal is to support climate-adaptive urban planning during the **pre-monsoon season (March–May 2024)**.
