@@ -1,155 +1,102 @@
+# app.py final with mapping functions
+
 import streamlit as st
-from streamlit_option_menu import option_menu
-import leafmap.foliumap as leafmap
 import geopandas as gpd
-import pandas as pd
-import plotly.express as px
-from io import BytesIO
-import base64
+import rasterio
+import numpy as np
+import leafmap.foliumap as leafmap
 
-# -------------------
-# App Configuration
-# -------------------
-st.set_page_config(page_title="Urban Heat Island Dashboard", layout="wide")
+# Title
+st.set_page_config(layout="wide")
+st.title("🗺️ Urban Heat Detection Mapping")
 
-# -------------------
-# Sidebar Controls
-# -------------------
-with st.sidebar:
-    st.image("logo.png", width=150)
-    selected_lang = option_menu("Language", ["English", "Marathi"], icons=["globe", "globe2"],
-                                menu_icon="cast", default_index=0)
-    st.header("Filter Options")
-    date_options = ["2023-05-01", "2023-06-01"]  # Example dates
-    selected_date = st.selectbox("Select Observation Date", date_options)
-    uhi_threshold = st.slider("UHI Threshold (\u00b0C)", 30, 50, 35)
-    layers_to_show = st.multiselect(
-        "Select Layers to Display",
-        ["UHI Zones", "Cooling Centers", "Green Spaces", "Built-up Areas", "Population Density"],
-        default=["UHI Zones", "Cooling Centers"]
-    )
+st.sidebar.title("🗂️ Map Layers")
+st.markdown("This interactive map shows urban heat patterns in Pune using vector and raster layers.")
 
-# -------------------
-# Language Dictionary (Simple)
-# -------------------
-if selected_lang == "Marathi":
-    lang = {
-        "title": "\ud83c\udf06 हवामान-लवचिक शहरी नियोजन डॅशबोर्ड",
-        "subtitle": "उष्णता बेट शोध आणि शीतकरण पायाभूत सुविधा मॅपिंग",
-        "map_tab": "\ud83d\udccd नकाशा दृश्य",
-        "analysis_tab": "\ud83d\udcca विश्लेषण सारांश",
-        "reco_tab": "\ud83e\uddf9 शिफारसी",
-        "about_tab": "\ud83d\udcdc प्रकल्प बद्दल",
-    }
-else:
-    lang = {
-        "title": "\ud83c\udf06 Climate-Resilient Urban Planning Dashboard",
-        "subtitle": "Detecting Urban Heat Islands & Mapping Cooling Infrastructure in Pune",
-        "map_tab": "\ud83d\udccd Map Viewer",
-        "analysis_tab": "\ud83d\udcca Analysis Summary",
-        "reco_tab": "\ud83e\uddf9 Interventions",
-        "about_tab": "\ud83d\udcdc About Project",
-    }
+# File paths (adjust if needed)
+critical_zones_path = "assets/critical_zones.geojson"
+green_spaces_path = "assets/pune_green_spaces.geojson"
+water_bodies_path = "assets/pune_water_bodies.geojson"
+low_ndvi_zones_path = "assets/low_ndvi_zones.geojson"
+uhi_zones_path = "assets/uhi_zones.geojson"
+mean_LST_path = "assets/mean_LST_Pune.tif"
+mean_NDVI_path = "assets/mean_NDVI_Pune.tif"
+uhi_hotspots_path = "assets/uhi_hotspots.tif"
 
-# -------------------
-# Header
-# -------------------
-st.title(lang["title"])
-st.markdown(f"**{lang['subtitle']}**")
+# Load map
+m = leafmap.Map(center=[18.52, 73.85], zoom=12, draw_control=False, measure_control=False)
+m.add_basemap("OpenStreetMap")
 
-# -------------------
-# Tabs Layout
-# -------------------
-tab1, tab2, tab3, tab4 = st.tabs([
-    lang["map_tab"],
-    lang["analysis_tab"],
-    lang["reco_tab"],
-    lang["about_tab"]
-])
+# Vector Layers
+if st.sidebar.checkbox("Show Critical Zones", True):
+    gdf = gpd.read_file(critical_zones_path)
+    m.add_gdf(gdf, "Critical Zones", info_mode="on_click",
+              style={"color": "red", "weight": 2, "fillOpacity": 0.4})
 
-# -------------------
-# Tab 1: Map Viewer
-# -------------------
-with tab1:
-    st.subheader(lang["map_tab"])
-    m = leafmap.Map(center=(18.5204, 73.8567), zoom=11)
+if st.sidebar.checkbox("Show Green Spaces", True):
+    gdf = gpd.read_file(green_spaces_path)
+    m.add_gdf(gdf, "Green Spaces", info_mode="on_click",
+              style={"color": "green", "weight": 1.5, "fillOpacity": 0.5})
 
-    if "UHI Zones" in layers_to_show:
-        m.add_geojson("data/uhi_zones.geojson", layer_name="UHI Zones", info_mode="on_hover")
-    if "Cooling Centers" in layers_to_show:
-        m.add_geojson("data/cooling_centers_cleaned.geojson", layer_name="Cooling Centers")
-    if "Green Spaces" in layers_to_show:
-        m.add_geojson("data/green_space_cleaned.geojson", layer_name="Green Spaces")
-    if "Built-up Areas" in layers_to_show:
-        m.add_geojson("data/builtup_cleaned.geojson", layer_name="Built-up Areas")
-    if "Population Density" in layers_to_show:
-        m.add_raster("data/pop_density.tif", layer_name="Population Density")
+if st.sidebar.checkbox("Show Water Bodies", False):
+    gdf = gpd.read_file(water_bodies_path)
+    m.add_gdf(gdf, "Water Bodies", info_mode="on_click",
+              style={"color": "blue", "weight": 1.5, "fillOpacity": 0.4})
 
-    m.add_basemap("CartoDB.Positron")
-    m.to_streamlit(width=1000, height=600)
+if st.sidebar.checkbox("Show Low NDVI Zones", False):
+    gdf = gpd.read_file(low_ndvi_zones_path)
+    m.add_gdf(gdf, "Low NDVI Zones", info_mode="on_click",
+              style={"color": "orange", "weight": 1.5, "fillOpacity": 0.5})
 
-    # Bookmark button
-    coords = st.text_input("📌 Bookmark Coordinates (lat, lon)", "18.5204, 73.8567")
-    if st.button("🔖 Save Bookmark"):
-        st.success(f"Bookmark saved for location: {coords}")
+if st.sidebar.checkbox("Show UHI Hotspots", True):
+    gdf = gpd.read_file(uhi_hotspots_path)
+    m.add_gdf(gdf, "UHI Hotspots", info_mode="on_click",
+              style={"color": "#800000", "weight": 2, "fillOpacity": 0.6})
 
-# -------------------
-# Tab 2: Analysis Summary
-# -------------------
-with tab2:
-    st.subheader(lang["analysis_tab"])
+if st.sidebar.checkbox("Show UHI Zones", False):
+    gdf = gpd.read_file(uhi_zones_path)
+    m.add_gdf(gdf, "UHI Zones", info_mode="on_click",
+              style={"color": "#FF00FF", "weight": 1.5, "fillOpacity": 0.5})
 
-    # Example metrics - replace with real calculations
-    col1, col2 = st.columns(2)
-    with col1:
-        st.metric("Total UHI Zones", 142)
-        st.metric("Avg UHI Intensity (\u00b0C)", 37.2)
-    with col2:
-        st.metric("Cooling Centers Mapped", 55)
-        st.metric("Total Green Space (sq.km)", 21.6)
+# Raster Layers
+if st.sidebar.checkbox("Show Mean LST (inferno)", True):
+    m.add_raster(mean_LST_path, layer_name="Mean LST", colormap="inferno", opacity=0.7)
 
-    st.markdown("### Heat Risk Distribution")
-    df_heat = pd.DataFrame({"Zone": ["High", "Moderate", "Low"], "Count": [45, 67, 30]})
-    st.plotly_chart(px.bar(df_heat, x="Zone", y="Count", color="Zone"))
+if st.sidebar.checkbox("Show Mean NDVI (YlGn)", False):
+    m.add_raster(mean_NDVI_path, layer_name="Mean NDVI", colormap="YlGn", opacity=0.6)
 
-    st.markdown("### UHI Zone vs Cooling Access")
-    st.image("figures/uhi_vs_cooling_access.png")
+# Stats for raster (optional)
+def raster_stats(path):
+    with rasterio.open(path) as src:
+        band = src.read(1)
+        nodata = src.nodata if src.nodata is not None else 0
+        band = np.ma.masked_equal(band, nodata)
+        return {
+            "Min": round(float(band.min()), 2),
+            "Max": round(float(band.max()), 2),
+            "Mean": round(float(band.mean()), 2)
+        }
 
-# -------------------
-# Tab 3: Recommendations
-# -------------------
-with tab3:
-    st.subheader(lang["reco_tab"])
+if st.sidebar.checkbox("Show LST Stats", False):
+    stats = raster_stats(mean_LST_path)
+    st.sidebar.markdown("**LST Stats:**")
+    st.sidebar.json(stats)
 
-    st.markdown("**🔴 High-Risk Zones (Red UHI)**")
-    st.markdown("- Add green infrastructure\n- Provide temporary cooling centers\n- Promote rooftop gardens")
+if st.sidebar.checkbox("Show NDVI Stats", False):
+    stats = raster_stats(mean_NDVI_path)
+    st.sidebar.markdown("**NDVI Stats:**")
+    st.sidebar.json(stats)
 
-    st.markdown("**🟠 Moderate-Risk Zones (Orange UHI)**")
-    st.markdown("- Improve street-level airflow\n- Encourage reflective rooftops")
+# Legend
+legend_dict = {
+    "Critical Zones": "red",
+    "Green Spaces": "green",
+    "Water Bodies": "blue",
+    "Low NDVI Zones": "orange",
+    "UHI Hotspots": "#800000",
+    "UHI Zones": "#FF00FF"
+}
+m.add_legend(title="Map Legend", legend_dict=legend_dict)
 
-    st.markdown("**🟢 Cool Zones**")
-    st.markdown("- Maintain existing green cover\n- Prevent rapid land use changes")
-
-    # Export functionality
-    st.download_button("📤 Download GeoJSON", data=open("data/final_layers.geojson", "rb"), file_name="final_layers.geojson")
-    df_csv = pd.read_csv("data/final_table.csv")
-    st.download_button("📤 Download Summary CSV", df_csv.to_csv(index=False), file_name="summary.csv")
-
-# -------------------
-# Tab 4: About Project
-# -------------------
-with tab4:
-    st.subheader(lang["about_tab"])
-    st.markdown("""
-    This project identifies Urban Heat Island (UHI) zones in Pune city using Landsat 9 LST data
-    and overlays cooling infrastructure like green spaces and cooling centers.
-
-    **Objectives:**
-    - Detect high-temperature zones
-    - Map climate adaptation infrastructure
-    - Support evidence-based urban planning
-
-    **Tools Used:** Geemap, Leafmap, Streamlit, GeoPandas, Rasterio
-
-    **Created by:** Prachi | [GitHub](https://github.com/yourusername/urban-heat-dashboard)
-    """)
+# Display the map
+m.to_streamlit(height=700)
