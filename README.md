@@ -21,8 +21,6 @@ This repo is part of my journey to transition into a professional role in **Spat
 | # | Project Title | Status | Description | Tools & Technologies |
 |---|-------------------------------|--------|------------------------|------------------------|
 | 1 | Climate-Resilient Urban Planning – Heat Island Detection & Cooling Infrastructure Mapping | 🔄 In Progress | Accessibility of cooling infrastructure | Google Colab, SAMGeo, Leafmap, Streamlit |
-| 2 | Urban Green Space Segmentation and Accessibility | 🔜 Planned | Assess walkability to urban green spaces | OSMnx, NetworkX, Folium |
-| 3 | Public Transport Mobility Patterns | 🔜 Planned | Explore city mobility using GTFS data | Mapbox, Deck.gl, Pandas |
 
 ---
 
