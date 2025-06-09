@@ -5,7 +5,7 @@ This project detects and visualizes Urban Heat Islands (UHIs) in Pune City in Ma
 
 ## 📂 Project Structure
     /Urban_Heat_Island_Detection
-    ├── UHI.py
+    ├── uhi.py
     ├── UHID.md
     ├── UHI 
         └── Raw/
