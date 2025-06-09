@@ -1,4 +1,4 @@
-# 🌆 Urban Heat Island Mapping & Cooling Features Detection – Pune, India
+# 🌆 Urban Heat Island Detection & Cooling Features Mapping  – Pune, India
 
 ## 📌 Project Overview
 This project aims to detect and analyze Urban Heat Islands (UHIs) in Pune City using Landsat 9 thermal satellite data and OpenStreetMap (OSM) features. The goal is to identify UHI hotspots and assess the effectiveness of existing cooling infrastructure (green spaces and water bodies) during May 2025, a peak summer month in India.
