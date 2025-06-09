@@ -88,7 +88,7 @@ import geopandas as gpd
 ee.Authenticate()
 # Replace 'your-google-cloud-project-id' with your actual project ID
 try:
-    ee.Initialize(project='ee-prachisarode95')
+    ee.Initialize(project='enter your project ID here')
 except ee.EEException as e:
     print(f"Earth Engine initialization failed: {e}")
 
