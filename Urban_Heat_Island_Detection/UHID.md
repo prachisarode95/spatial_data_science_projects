@@ -25,3 +25,14 @@ This project detects and visualizes Urban Heat Islands (UHIs) in Pune using Land
 ## ✅ Final Visual Outputs
 - Classified UHI zones using `K-Means` algorithm
 - Mean LST per urban green/water body
+
+## 📊 Final Outputs
+
+| Output File                     | Description                                  |
+| ------------------------------ | -------------------------------------------- |
+| `pune_cooling_features.geojson` | Extracted green and water bodies (cooling features) |
+| `pune_cooling_with_LST.geojson` | Cooling features enriched with zonal mean LST values |
+| `phase2_masked_LST.png`         | Visualization of masked LST raster showing study area temperature |
+| `phase4_kmeans_clusters.png`    | Final UHI zone classification map using KMeans clustering |
+| `kmeans_uhi_clusters.tif`       | GeoTIFF raster of classified UHI zones for GIS and analysis |
+
