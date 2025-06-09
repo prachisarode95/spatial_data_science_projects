@@ -8,9 +8,9 @@ Original file is located at
 
 # 🌆 Urban Heat Island Detection & Cooling Infrastructure Mapping – Pune City
 
-**Duration:** May 2025 – Present  
-**Tech Stack:** Python, Google Colab, Landsat 9 TIRS, GeoJSON, OSM Overpass API  
-**Libraries:** `geopandas`, `osmnx`, `rasterio`, `rasterstats`, `scikit-learn`, `matplotlib`, `numpy`
+**Duration:** May 2025 - June 2025  
+**Tech Stack:** Landsat 9 TIRS data by Google Earth Engine (Python API), Google Colab, OSM Overpass API  
+**Libraries:** `geemap`, `geopandas`, `osmnx`, `rasterio`, `rasterstats`, `scikit-learn`, `matplotlib`, `numpy`
 
 This project identifies Urban Heat Island (UHI) zones in Pune by integrating satellite-derived land surface temperature with vector data of green and blue spaces, offering insights into urban cooling strategies.
 
