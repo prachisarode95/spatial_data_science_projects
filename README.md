@@ -10,8 +10,6 @@ This repo is part of my journey to transition into a professional role in **Spat
 ---
 
 ## 🚧 Current Status
-
-✅ First project in progress: **Climate-Resilient Urban Planning – Heat Island Detection & Cooling Infrastructure Mapping**  
 🚀 More projects to follow soon — stay tuned and ⭐ this repo!
 
 ---
@@ -20,7 +18,7 @@ This repo is part of my journey to transition into a professional role in **Spat
 
 | # | Project Title | Status | Description | Tools & Technologies |
 |---|-------------------------------|--------|------------------------|------------------------|
-| 1 | Climate-Resilient Urban Planning – Heat Island Detection & Cooling Infrastructure Mapping | 🔄 In Progress | Accessibility of cooling infrastructure | Google Colab, SAMGeo, Leafmap, Streamlit |
+| 1 | Climate-Resilient Urban Planning – Heat Island Detection & Cooling Infrastructure Mapping | Completed | Accessibility of cooling infrastructure | GEE Python API, Landsat 9, Leafmap |
 
 ---
 
