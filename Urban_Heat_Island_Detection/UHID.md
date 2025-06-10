@@ -42,27 +42,27 @@ The entire workflow is implemented using open-source geospatial Python libraries
 
 ## 🚀 Workflow Breakdown
 
-- 🔹 Phase 1: Study Area Setup
+- Phase 1: Study Area Setup
 Defined Pune city boundary using geojson file.
 
 Fetched OSM features (green zones, water bodies) using overpass queries.
 
-- 🔹 Phase 2: Land Surface Temperature (LST) Data Processing
+- Phase 2: Land Surface Temperature (LST) Data Processing
 Downloaded Landsat 9 LST data via Google Earth Engine.
 
 Preprocessed and cleaned raster data to remove invalid values and apply city boundary mask.
 
-- 🔹 Phase 3: Zonal Statistics
+- Phase 3: Zonal Statistics
 Calculated mean LST values for each green and water body feature using rasterstats.zonal_stats().
 
 Merged statistics with vector features to assess their cooling efficiency.
 
-- 🔹 Phase 4: Urban Heat Island Classification
+- Phase 4: Urban Heat Island Classification
 Applied K-Means clustering on the cleaned LST raster to classify areas into temperature zones (cool to hot).
 
 Exported results as a new raster GeoTIFF file for spatial analysis.
 
-- 🔹 Phase 5: Visualization & Output
+- Phase 5: Visualization & Output
 Generated heatmap overlays and feature-enriched maps.
 
 Exported final GeoTIFF and GeoJSON files for GIS integration or further analysis.
@@ -79,10 +79,3 @@ Exported final GeoTIFF and GeoJSON files for GIS integration or further analysis
 | `phase4_kmeans_clusters.png`   | Heatmap showing different UHI zones for Pune city |
 
 ---
-
-## 🎯 Impact & Applications
-- Helps urban planners identify UHI hotspots and evaluate existing cooling infrastructure.
-
-- Supports climate-resilient urban design by guiding future greening and water conservation efforts.
-
-- Demonstrates end-to-end use of satellite data, open-source GIS tools, and Python-based automation for real-world climate applications.
