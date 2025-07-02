@@ -42,11 +42,11 @@ Manual delineation of field boundaries is time-consuming and inconsistent across
 
 ## 🚀 Project Workflow
 
-### ✅ Phase 1: Data Acquisition (Completed)
+### ✅ Phase 1: Data Acquisition (Planned)
 - Downloaded Sentinel-2 imagery via Google Earth Engine Python API.
 - Extracted farmland polygons from OpenStreetMap using `osmnx` and `geopandas`.
 
-### Phase 2: Image–Mask Dataset Preparation (In progress)
+### Phase 2: Image–Mask Dataset Preparation (Planned)
 - Clipped Sentinel-2 RGB composite to farmland AOI.
 - Rasterized farmland polygons to binary masks.
 - Generated 512×512 image–mask tile pairs with proper padding for model input.
@@ -97,8 +97,7 @@ field-boundary-detection/
 
 ## 📌 Status
 
-🟡 **Ongoing**: Currently in Phase 2  
-🟢 Phase 1 completed successfully  
+🟡 **Initiated**: Soon to be started with Phase 1 & 2
 🟣 Final goal: Deploy field boundary predictions for real-world AOIs
 
 ---
