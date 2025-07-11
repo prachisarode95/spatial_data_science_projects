@@ -1,13 +1,13 @@
-# 🌆 Urban Heat Island Detection & Cooling Features Mapping  – Pune, India
+# Urban Heat Island Detection & Cooling Features Mapping  – Pune, India
 
-## 📌 Project Overview
+## Project Overview
 This project aims to detect and analyze Urban Heat Islands (UHIs) in Pune City using Landsat 9 thermal satellite data and OpenStreetMap (OSM) features. The goal is to identify UHI hotspots and assess the effectiveness of existing cooling infrastructure (green spaces and water bodies) during May 2025, a peak summer month in India.
 
 The entire workflow is implemented using open-source geospatial Python libraries and visualized through a reproducible pipeline.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```
 /Urban_Heat_Island_Detection
 ├── uhi.py                           # Main Python script
@@ -27,7 +27,7 @@ The entire workflow is implemented using open-source geospatial Python libraries
 ```
 ---
 
-## 🛠️ Tools & Libraries
+## Tools & Libraries
 - **Google Earth Engine (GEE) Python API** (via Google Colab)
 
 - **Python Libraries**: `geemap`, `geopandas`, `rasterio`, `numpy`, `sklearn`, `rasterstats`, `matplotlib`
@@ -40,7 +40,7 @@ The entire workflow is implemented using open-source geospatial Python libraries
 
 ---
 
-## 🚀 Workflow Breakdown
+## Workflow Breakdown
 
 - Phase 1: Study Area Setup
 Defined Pune city boundary using geojson file.
@@ -69,7 +69,7 @@ Exported final GeoTIFF and GeoJSON files for GIS integration or further analysis
 
 ---
 
-## 📊 Final Outputs
+## Final Outputs
 
 | Output File                     | Description                                  |
 | ------------------------------ | -------------------------------------------- |
