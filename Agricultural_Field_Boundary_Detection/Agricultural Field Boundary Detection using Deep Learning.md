@@ -1,23 +1,23 @@
-# 🌾 Agricultural Field Boundary Detection using Deep Learning
+# Agricultural Field Boundary Detection using Deep Learning
 
 ![Remote Sensing | Deep Learning | Agriculture](https://img.shields.io/badge/Remote_Sensing-Sentinel--2-green?style=flat&logo=googleearthengine) ![Deep Learning](https://img.shields.io/badge/Deep_Learning-U--Net-blue?style=flat&logo=tensorflow) ![Status](https://img.shields.io/badge/Project-Work_in_Progress-yellow)
 
-## 📌 Project Overview
+## Project Overview
 
-This project demonstrates a fully automated workflow to detect agricultural field boundaries using high-resolution **Sentinel-2 imagery** and **OpenStreetMap farmland labels**, combined with a **U-Net based semantic segmentation model**. It is tailored to highlight my applied geospatial and machine learning skills for real-world agricultural monitoring tasks.
+This project demonstrates a fully automated workflow to detect agricultural field boundaries using high-resolution **Sentinel-2 imagery** and **OpenStreetMap farmland labels**, combined with a **U-Net-based semantic segmentation model**. It is tailored to highlight my applied geospatial and machine learning skills for real-world agricultural monitoring tasks.
 
 **Key Objective**:  
 To build an end-to-end pipeline that extracts field-level parcel boundaries from satellite imagery, enabling downstream applications such as crop type mapping, yield analysis, and precision agriculture.
 
 ---
 
-## 🎯 Why this Project?
+## Why this Project?
 
 Manual delineation of field boundaries is time-consuming and inconsistent across regions. This project showcases how **remote sensing data** combined with **deep learning** can automate boundary detection with scalability and precision — a highly sought-after skill in agriculture, climate tech, and geospatial AI roles.
 
 ---
 
-## 🌍 Area of Interest
+## Area of Interest
 
 - **Region**: Occitanie, France 🇫🇷
 - **AOI Source**: `OpenStreetMap` administrative boundaries
@@ -26,7 +26,7 @@ Manual delineation of field boundaries is time-consuming and inconsistent across
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category             | Tools & Libraries |
 |----------------------|------------------|
@@ -40,9 +40,9 @@ Manual delineation of field boundaries is time-consuming and inconsistent across
 
 ---
 
-## 🚀 Project Workflow
+## Project Workflow
 
-### ✅ Phase 1: Data Acquisition (Planned)
+### Phase 1: Data Acquisition (Planned)
 - Downloaded Sentinel-2 imagery via Google Earth Engine Python API.
 - Extracted farmland polygons from OpenStreetMap using `osmnx` and `geopandas`.
 
@@ -66,7 +66,7 @@ Manual delineation of field boundaries is time-consuming and inconsistent across
 
 ---
 
-## 📁 Project Structure To Be
+## Project Structure To Be
 ```
 field-boundary-detection/
 │
@@ -85,7 +85,7 @@ field-boundary-detection/
 ```
 ---
 
-## 🎓 Skills To Be Demonstrated
+## Skills To Be Demonstrated
 
 - Remote sensing data preprocessing using Python
 - Raster-vector operations and tiling large satellite images
@@ -95,21 +95,13 @@ field-boundary-detection/
 
 ---
 
-## 📌 Status
+## Status
 
-🟡 **Initiated**: Soon to be started with Phase 1 & 2
-🟣 Final goal: Deploy field boundary predictions for real-world AOIs
-
+- **Initiated**: Soon to be started with Phase 1 & 2
+- Final goal: Deploy field boundary predictions for real-world AOIs
 ---
 
-## 📬 Contact
-
-> **Prachi – GIS & Remote Sensing Analyst**  
-> [LinkedIn](https://www.linkedin.com/in/prachisarode95) | [Medium](https://medium.com/@prachisarode) | [Email](mailto:prachisarode95@gmail.com)
-
----
-
-## ⭐ Acknowledgements
+## Acknowledgements
 
 - [Google Earth Engine](https://earthengine.google.com/)
 - [OpenStreetMap](https://www.openstreetmap.org/)
