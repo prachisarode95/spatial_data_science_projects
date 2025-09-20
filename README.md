@@ -12,25 +12,6 @@ This is a curated collection of **Spatial Data Science Projects** — a reposito
 
 ---
 
-## Tools & Libraries
-
-### Spatial & Data Processing
-- `GeoPandas`, `Shapely`, `Fiona`, `rasterio`
-- `Pyproj`, `Pandas`, `Numpy`
-
-### Visualization & Mapping
-- `Plotly`, `Matplotlib`, `Seaborn`
-- `Kepler.gl`, `Leafmap`, `Deck.gl`, `Folium`
-- `OSMnx`, `NetworkX`
-
-### Earth Observation
-- `Google Earth Engine (GEE)`
-- `EarthPy`, `SentinelHub`, `geemap`, `SAMGeo`, `Leafmap`
-
-### App Building
-- `Streamlit`, `Panel`, `Dash`, `Voila` for interactive web dashboards
----
-
 ## Learning Goals
 
 To demonstrate:
@@ -38,11 +19,5 @@ To demonstrate:
 - Real-world spatial problem solving with open datasets
 - Interactive dashboards for non-technical decision-makers
 - Proficiency with Python, Earth Engine, Streamlit, and spatial data science libraries
-
----
-
-## Acknowledgements
-
-Special thanks to the open-source GIS and remote sensing community for the tools, tutorials, and inspiration that make these projects possible.
 
 ---
